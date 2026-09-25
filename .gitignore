@@ -25,3 +25,6 @@ _tmp_*.py
 Thumbs.db
 .vscode/
 .idea/
+
+*.egg-info/
+.eggs/
