@@ -1,0 +1,64 @@
+seed: 42
+target:
+  total_cases: 60
+  total_notes_min: 1000
+  total_notes_max: 1400
+
+difficulty_note_ranges:
+  easy: [6, 10]
+  medium: [12, 20]
+  hard: [25, 40]
+
+author_roles:
+  advisor: 0.35
+  operations_scheduler: 0.20
+  field_engineer: 0.20
+  billing_finance: 0.15
+  team_lead_quality: 0.10
+
+note_categories:
+  - customer_contact
+  - internal_update
+  - scheduling
+  - commercial
+  - payment
+  - delivery_update
+  - completion_signal
+  - cancellation_signal
+  - risk_flag
+  - administrative
+
+scenario_packs:
+  - name: clear_quoted
+    count: 8
+    difficulty: easy
+    target_status: quoted
+  - name: clear_accepted_unpaid
+    count: 8
+    difficulty: medium
+    target_status: accepted_unpaid
+  - name: clear_accepted_paid
+    count: 8
+    difficulty: medium
+    target_status: accepted_paid
+  - name: clear_completed
+    count: 7
+    difficulty: medium
+    target_status: completed
+  - name: clear_cancelled
+    count: 7
+    difficulty: easy
+    target_status: cancelled
+  - name: contradictory_timeline
+    count: 8
+    difficulty: hard
+    target_status: in_delivery
+  - name: sparse_evidence
+    count: 6
+    difficulty: hard
+    target_status: insufficient_evidence
+  - name: long_history_with_reversal
+    count: 8
+    difficulty: hard
+    target_status: completed
+

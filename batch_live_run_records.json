@@ -1,0 +1,602 @@
+[
+  {
+    "service_request_id": "SR-0059",
+    "assessment_id": "ASM-33A746A74F98",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0060",
+    "assessment_id": "ASM-F0BF8328CA25",
+    "result_kind": "success",
+    "recommended_status": "in_delivery",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0058",
+    "assessment_id": "ASM-A77D66A54A91",
+    "result_kind": "success",
+    "recommended_status": "cancelled",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0057",
+    "assessment_id": "ASM-2472FC240E4C",
+    "result_kind": "failure",
+    "recommended_status": "insufficient_evidence",
+    "confidence": "low",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "contract_validation_failed",
+    "message": "1 validation error for AssessmentContract\nrecommended_status\n  Input should be 'new', 'quoted', 'accepted_unpaid', 'accepted_paid', 'in_delivery', 'completed', 'cancelled' or 'insufficient_evidence' [type=literal_error, input_value='pending_customer_confirmation', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error"
+  },
+  {
+    "service_request_id": "SR-0056",
+    "assessment_id": "ASM-DF72DE917CDC",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0055",
+    "assessment_id": "ASM-A19C6232B2A5",
+    "result_kind": "success",
+    "recommended_status": "accepted_unpaid",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0054",
+    "assessment_id": "ASM-8D38CF93AA5C",
+    "result_kind": "success",
+    "recommended_status": "accepted_unpaid",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0052",
+    "assessment_id": "ASM-07D442AA5795",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0053",
+    "assessment_id": "ASM-DA3F41150768",
+    "result_kind": "failure",
+    "recommended_status": "insufficient_evidence",
+    "confidence": "low",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "contract_validation_failed",
+    "message": "1 validation error for AssessmentContract\nrecommended_status\n  Input should be 'new', 'quoted', 'accepted_unpaid', 'accepted_paid', 'in_delivery', 'completed', 'cancelled' or 'insufficient_evidence' [type=literal_error, input_value='withdrawn', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error"
+  },
+  {
+    "service_request_id": "SR-0051",
+    "assessment_id": "ASM-E6353722E115",
+    "result_kind": "success",
+    "recommended_status": "quoted",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0050",
+    "assessment_id": "ASM-1B6A36B76379",
+    "result_kind": "success",
+    "recommended_status": "in_delivery",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0049",
+    "assessment_id": "ASM-32FA63C369E1",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0048",
+    "assessment_id": "ASM-7AB67A7DFF61",
+    "result_kind": "success",
+    "recommended_status": "cancelled",
+    "confidence": "high",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0047",
+    "assessment_id": "ASM-77ED98905B69",
+    "result_kind": "success",
+    "recommended_status": "quoted",
+    "confidence": "high",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0046",
+    "assessment_id": "ASM-FB236E965A03",
+    "result_kind": "success",
+    "recommended_status": "cancelled",
+    "confidence": "high",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0045",
+    "assessment_id": "ASM-E7CB74EAE7F7",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0043",
+    "assessment_id": "ASM-F7B514113121",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0044",
+    "assessment_id": "ASM-42F994A709FB",
+    "result_kind": "success",
+    "recommended_status": "quoted",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0042",
+    "assessment_id": "ASM-6F08FEDD0715",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0041",
+    "assessment_id": "ASM-9134F168984A",
+    "result_kind": "success",
+    "recommended_status": "accepted_unpaid",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0039",
+    "assessment_id": "ASM-42208D9194AA",
+    "result_kind": "success",
+    "recommended_status": "cancelled",
+    "confidence": "high",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0040",
+    "assessment_id": "ASM-BFFA269280A1",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0038",
+    "assessment_id": "ASM-16708BBB1134",
+    "result_kind": "success",
+    "recommended_status": "in_delivery",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0037",
+    "assessment_id": "ASM-BD151E480522",
+    "result_kind": "success",
+    "recommended_status": "cancelled",
+    "confidence": "high",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0035",
+    "assessment_id": "ASM-65DFDE4E049B",
+    "result_kind": "success",
+    "recommended_status": "insufficient_evidence",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0036",
+    "assessment_id": "ASM-A60A38F4BEFF",
+    "result_kind": "success",
+    "recommended_status": "accepted_unpaid",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0034",
+    "assessment_id": "ASM-E02BD261A9A2",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0033",
+    "assessment_id": "ASM-7D8020284678",
+    "result_kind": "success",
+    "recommended_status": "in_delivery",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0032",
+    "assessment_id": "ASM-EA4189ED3C5D",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0031",
+    "assessment_id": "ASM-6E42FD71877B",
+    "result_kind": "success",
+    "recommended_status": "accepted_paid",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0030",
+    "assessment_id": "ASM-3B0FF6F898CC",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0029",
+    "assessment_id": "ASM-45C59C78A60B",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0028",
+    "assessment_id": "ASM-3511894FCE61",
+    "result_kind": "success",
+    "recommended_status": "in_delivery",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0027",
+    "assessment_id": "ASM-FCA0E958A0D6",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0025",
+    "assessment_id": "ASM-E5CC4A23CFBB",
+    "result_kind": "success",
+    "recommended_status": "in_delivery",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0026",
+    "assessment_id": "ASM-55811C23F12F",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0024",
+    "assessment_id": "ASM-4E97817C59A0",
+    "result_kind": "success",
+    "recommended_status": "accepted_paid",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0023",
+    "assessment_id": "ASM-86D920AD941C",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "high",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0022",
+    "assessment_id": "ASM-518C52E89764",
+    "result_kind": "success",
+    "recommended_status": "accepted_unpaid",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0021",
+    "assessment_id": "ASM-27992C1D9CEF",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "high",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0020",
+    "assessment_id": "ASM-B88013286237",
+    "result_kind": "success",
+    "recommended_status": "quoted",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0018",
+    "assessment_id": "ASM-22CCFD8371D7",
+    "result_kind": "success",
+    "recommended_status": "accepted_paid",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0019",
+    "assessment_id": "ASM-249B46A978A3",
+    "result_kind": "failure",
+    "recommended_status": "insufficient_evidence",
+    "confidence": "low",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "contract_validation_failed",
+    "message": "1 validation error for AssessmentContract\nrecommended_status\n  Input should be 'new', 'quoted', 'accepted_unpaid', 'accepted_paid', 'in_delivery', 'completed', 'cancelled' or 'insufficient_evidence' [type=literal_error, input_value='pending_customer_confirmation', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error"
+  },
+  {
+    "service_request_id": "SR-0017",
+    "assessment_id": "ASM-E6447AE4B0C4",
+    "result_kind": "failure",
+    "recommended_status": "insufficient_evidence",
+    "confidence": "low",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "contract_validation_failed",
+    "message": "1 validation error for AssessmentContract\nrecommended_status\n  Input should be 'new', 'quoted', 'accepted_unpaid', 'accepted_paid', 'in_delivery', 'completed', 'cancelled' or 'insufficient_evidence' [type=literal_error, input_value='completed_pending_closure', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error"
+  },
+  {
+    "service_request_id": "SR-0015",
+    "assessment_id": "ASM-EEE320A73C82",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "high",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0016",
+    "assessment_id": "ASM-1BE0315A49A1",
+    "result_kind": "success",
+    "recommended_status": "insufficient_evidence",
+    "confidence": "high",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0014",
+    "assessment_id": "ASM-54D5858197E0",
+    "result_kind": "success",
+    "recommended_status": "in_delivery",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0013",
+    "assessment_id": "ASM-39D186EF8A68",
+    "result_kind": "success",
+    "recommended_status": "cancelled",
+    "confidence": "high",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0012",
+    "assessment_id": "ASM-6D2F78A2F25F",
+    "result_kind": "success",
+    "recommended_status": "cancelled",
+    "confidence": "high",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0011",
+    "assessment_id": "ASM-79E3B18B537C",
+    "result_kind": "success",
+    "recommended_status": "accepted_unpaid",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0009",
+    "assessment_id": "ASM-3B7ACEE428D2",
+    "result_kind": "success",
+    "recommended_status": "cancelled",
+    "confidence": "high",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0010",
+    "assessment_id": "ASM-9A83545F91A3",
+    "result_kind": "success",
+    "recommended_status": "accepted_paid",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0008",
+    "assessment_id": "ASM-2D33DA51BFC2",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0007",
+    "assessment_id": "ASM-3490A428202A",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0006",
+    "assessment_id": "ASM-786715E6F2C1",
+    "result_kind": "success",
+    "recommended_status": "accepted_paid",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0004",
+    "assessment_id": "ASM-D0F91836B6A9",
+    "result_kind": "failure",
+    "recommended_status": "insufficient_evidence",
+    "confidence": "low",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "contract_validation_failed",
+    "message": "1 validation error for AssessmentContract\nrecommended_status\n  Input should be 'new', 'quoted', 'accepted_unpaid', 'accepted_paid', 'in_delivery', 'completed', 'cancelled' or 'insufficient_evidence' [type=literal_error, input_value='cancellation_requested', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error"
+  },
+  {
+    "service_request_id": "SR-0005",
+    "assessment_id": "ASM-066067477B67",
+    "result_kind": "success",
+    "recommended_status": "accepted_paid",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0003",
+    "assessment_id": "ASM-F8F7585F2F92",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0001",
+    "assessment_id": "ASM-293F21D8CBB3",
+    "result_kind": "success",
+    "recommended_status": "in_delivery",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0002",
+    "assessment_id": "ASM-6032D82CB23A",
+    "result_kind": "success",
+    "recommended_status": "accepted_paid",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  }
+]

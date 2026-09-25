@@ -1,0 +1,11 @@
+{
+  "total_cases": 5,
+  "attempted": 5,
+  "saved": 5,
+  "success": 4,
+  "failure": 1,
+  "save_errors": 0,
+  "input_tokens": 8695,
+  "output_tokens": 4919,
+  "estimated_cost_gbp": "0.007093"
+}

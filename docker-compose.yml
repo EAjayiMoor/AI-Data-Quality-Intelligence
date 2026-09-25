@@ -1,0 +1,23 @@
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ai_data_quality_poc_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-ai_data_quality_poc}
+      POSTGRES_USER: ${POSTGRES_USER:-poc_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-poc_password}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-poc_user} -d ${POSTGRES_DB:-ai_data_quality_poc}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

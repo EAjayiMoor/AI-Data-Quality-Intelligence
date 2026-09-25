@@ -1,0 +1,52 @@
+[
+  {
+    "service_request_id": "SR-0057",
+    "assessment_id": "ASM-66014796AD8F",
+    "result_kind": "failure",
+    "recommended_status": "insufficient_evidence",
+    "confidence": "low",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "contract_validation_failed",
+    "message": "1 validation error for AssessmentContract\nrecommended_status\n  Input should be 'new', 'quoted', 'accepted_unpaid', 'accepted_paid', 'in_delivery', 'completed', 'cancelled' or 'insufficient_evidence' [type=literal_error, input_value='pending', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error"
+  },
+  {
+    "service_request_id": "SR-0053",
+    "assessment_id": "ASM-4C02747E15A2",
+    "result_kind": "success",
+    "recommended_status": "cancelled",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0019",
+    "assessment_id": "ASM-AC24B8FA50B0",
+    "result_kind": "success",
+    "recommended_status": "cancelled",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0017",
+    "assessment_id": "ASM-8ED855688AD9",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "high",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  },
+  {
+    "service_request_id": "SR-0004",
+    "assessment_id": "ASM-C9DFF3E296CB",
+    "result_kind": "success",
+    "recommended_status": "accepted_unpaid",
+    "confidence": "medium",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "",
+    "message": ""
+  }
+]
