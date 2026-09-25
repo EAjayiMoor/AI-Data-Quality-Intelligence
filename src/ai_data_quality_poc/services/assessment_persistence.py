@@ -46,6 +46,9 @@ class ExecutiveMetrics(BaseModel):
     total_cases_assessed: int
     total_notes_assessed: int
     successful_assessments: int
+    status_alignment_matched_success: int
+    status_alignment_total_success: int
+    status_alignment_percent_success: Decimal
     failed_assessments: int
     total_exceptions: int
     cases_with_exceptions: int
@@ -254,20 +257,38 @@ def get_executive_metrics(
     database_engine = engine or build_engine()
 
     with Session(database_engine) as session:
-        assessment_status_stmt = select(Assessment.assessment_status)
+        assessment_rows_stmt = select(
+            Assessment.assessment_status,
+            Assessment.recorded_status_snapshot,
+            Assessment.recommended_status,
+        )
         if assessment_status_filter is not None:
-            assessment_status_stmt = assessment_status_stmt.where(
+            assessment_rows_stmt = assessment_rows_stmt.where(
                 Assessment.assessment_status == assessment_status_filter
             )
         if confidence_filter is not None:
-            assessment_status_stmt = assessment_status_stmt.where(
+            assessment_rows_stmt = assessment_rows_stmt.where(
                 Assessment.confidence == confidence_filter
             )
 
-        statuses = session.scalars(assessment_status_stmt).all()
-        total_assessments = len(statuses)
-        successful_assessments = sum(1 for status in statuses if status == "success")
-        failed_assessments = sum(1 for status in statuses if status == "failed")
+        assessment_rows = session.execute(assessment_rows_stmt).all()
+        total_assessments = len(assessment_rows)
+        successful_assessments = sum(1 for row in assessment_rows if row[0] == "success")
+        failed_assessments = sum(1 for row in assessment_rows if row[0] == "failed")
+        status_alignment_matched_success = sum(
+            1
+            for row in assessment_rows
+            if row[0] == "success" and row[1] == row[2]
+        )
+        status_alignment_total_success = successful_assessments
+        if status_alignment_total_success == 0:
+            status_alignment_percent_success = Decimal("0.0")
+        else:
+            status_alignment_percent_success = (
+                Decimal(status_alignment_matched_success)
+                * Decimal(100)
+                / Decimal(status_alignment_total_success)
+            ).quantize(Decimal("0.1"), rounding=ROUND_HALF_UP)
 
         total_exceptions_stmt = select(func.count(AssessmentException.id)).join(
             Assessment,
@@ -375,6 +396,9 @@ def get_executive_metrics(
         total_cases_assessed=total_cases_assessed,
         total_notes_assessed=total_notes_assessed,
         successful_assessments=successful_assessments,
+        status_alignment_matched_success=status_alignment_matched_success,
+        status_alignment_total_success=status_alignment_total_success,
+        status_alignment_percent_success=status_alignment_percent_success,
         failed_assessments=failed_assessments,
         total_exceptions=total_exceptions,
         cases_with_exceptions=cases_with_exceptions,

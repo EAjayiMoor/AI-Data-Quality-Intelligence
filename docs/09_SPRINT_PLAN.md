@@ -10,6 +10,7 @@
 
 - Active phase: **Phase 10 - Executive summary and Moorhouse UI alignment**
 - Scope: persist assessment runs (success and failure), store usage-cost records, and display latest saved summary per service request.
+- Update (2026-09-25): added status-alignment KPI (system status vs AI recommendation) to Executive summary and AI Assessment run-set metrics.
 - Out of scope: live provider API calls and non-assessment pages.
 
 ## Phase 8 exit checklist

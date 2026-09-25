@@ -614,14 +614,23 @@ def _render_executive_page(
         confidence_filter=confidence_filter,
     )
 
-    kpi_col_1, kpi_col_2, kpi_col_3, kpi_col_4 = st.columns(4)
+    kpi_col_1, kpi_col_2, kpi_col_3, kpi_col_4, kpi_col_5 = st.columns(5)
     with kpi_col_1:
         _render_card("Cases assessed", str(metrics.total_cases_assessed))
     with kpi_col_2:
         _render_card("Notes assessed", str(metrics.total_notes_assessed))
     with kpi_col_3:
-        _render_card("Total cost", _format_currency(metrics.total_cost))
+        _render_card(
+            "Status alignment",
+            f"{metrics.status_alignment_percent_success}%",
+            meta=(
+                f"{metrics.status_alignment_matched_success}/"
+                f"{metrics.status_alignment_total_success} successful runs"
+            ),
+        )
     with kpi_col_4:
+        _render_card("Total cost", _format_currency(metrics.total_cost))
+    with kpi_col_5:
         _render_card("Top exception", metrics.top_exception_type or "None")
 
     detail_col_1, detail_col_2, detail_col_3 = st.columns(3)
@@ -804,16 +813,25 @@ def _render_assessment_page(
         confidence_filter=confidence_filter,
     )
 
-    metric_col_1, metric_col_2, metric_col_3, metric_col_4, metric_col_5 = st.columns(5)
+    metric_col_1, metric_col_2, metric_col_3, metric_col_4, metric_col_5, metric_col_6 = st.columns(6)
     with metric_col_1:
         _render_card("Assessment runs", str(metrics.total_assessments))
     with metric_col_2:
         _render_card("Cases assessed", str(metrics.total_cases_assessed))
     with metric_col_3:
-        _render_card("Total tokens", str(metrics.total_input_tokens + metrics.total_output_tokens))
+        _render_card(
+            "Status alignment",
+            f"{metrics.status_alignment_percent_success}%",
+            meta=(
+                f"{metrics.status_alignment_matched_success}/"
+                f"{metrics.status_alignment_total_success} successful runs"
+            ),
+        )
     with metric_col_4:
-        _render_card("Total cost", _format_currency(metrics.total_cost))
+        _render_card("Total tokens", str(metrics.total_input_tokens + metrics.total_output_tokens))
     with metric_col_5:
+        _render_card("Total cost", _format_currency(metrics.total_cost))
+    with metric_col_6:
         _render_card("Cases with exceptions", str(metrics.cases_with_exceptions))
 
     st.markdown("### 2) Full SR output table")
