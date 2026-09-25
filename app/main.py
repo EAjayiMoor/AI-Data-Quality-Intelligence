@@ -432,7 +432,7 @@ def _render_result(result: AssessmentRunResult, recorded_status: str) -> None:
         st.write("No exceptions reported.")
 
 
-def _render_latest_saved_summary(service_request_id: str) -> None:
+def _render_latest_saved_summary(service_request_id: str, current_recorded_status: str) -> None:
     latest_saved = get_latest_assessment_summary(service_request_id)
     if latest_saved is None:
         st.caption("No saved assessments yet for this service request.")
@@ -443,7 +443,12 @@ def _render_latest_saved_summary(service_request_id: str) -> None:
         f"({latest_saved.created_at:%Y-%m-%d %H:%M:%S})"
     )
 
-    card_col_1, card_col_2, card_col_3, card_col_4 = st.columns(4)
+    ai_matches_system_status = (
+        latest_saved.recommended_status.strip().lower()
+        == current_recorded_status.strip().lower()
+    )
+
+    card_col_1, card_col_2, card_col_3, card_col_4, card_col_5 = st.columns(5)
     with card_col_1:
         _render_card("Saved status", latest_saved.assessment_status.title())
     with card_col_2:
@@ -452,6 +457,15 @@ def _render_latest_saved_summary(service_request_id: str) -> None:
         _render_card("Saved confidence", confidence_label(latest_saved.confidence))
     with card_col_4:
         _render_card("Saved cost", _format_currency(latest_saved.total_cost))
+    with card_col_5:
+        _render_card(
+            "AI matches system status",
+            "Yes" if ai_matches_system_status else "No",
+            meta=(
+                f"System: {status_label(current_recorded_status)} | "
+                f"AI: {status_label(latest_saved.recommended_status)}"
+            ),
+        )
 
 
 def _render_assessment_output_history(service_request_id: str) -> None:
@@ -962,7 +976,10 @@ def _render_assessment_page(
     with summary_col_4:
         _render_card("Payments", str(len(case_context.payments)))
 
-    _render_latest_saved_summary(selected_request.id)
+    _render_latest_saved_summary(
+        selected_request.id,
+        case_context.service_request.recorded_status,
+    )
     _render_assessment_output_history(selected_request.id)
 
     context_col_1, context_col_2 = st.columns([1.5, 1.0])

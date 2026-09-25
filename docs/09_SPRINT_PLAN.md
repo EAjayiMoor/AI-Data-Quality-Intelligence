@@ -10,7 +10,9 @@
 
 - Active phase: **Phase 10 - Executive summary and Moorhouse UI alignment**
 - Scope: persist assessment runs (success and failure), store usage-cost records, and display latest saved summary per service request.
-- Update (2026-09-25): added status-alignment KPI (system status vs AI recommendation) to Executive summary and AI Assessment run-set metrics.`r`n- Update (2026-09-25): added one-command release script for commit/push + Azure ACR build + Web App deployment with health check.
+- Update (2026-09-25): added status-alignment KPI (system status vs AI recommendation) to Executive summary and AI Assessment run-set metrics.
+- Update (2026-09-25): added one-command release script for commit/push + Azure ACR build + Web App deployment with health check.
+- Update (2026-09-26): added SR deep-dive "AI matches system status" flag in AI Assessment page latest saved summary.
 - Out of scope: live provider API calls and non-assessment pages.
 
 ## Phase 8 exit checklist
@@ -144,6 +146,8 @@ Complete the full journey from record selection to assessment, evidence, cost, e
 - Provider/model comparison.
 - Production authentication and authorisation.
 - Source-system integration.
+
+
 
 
 
