@@ -1,0 +1,12 @@
+.venv
+.mypy_cache
+.pytest_cache
+.ruff_cache
+__pycache__
+*.pyc
+.git
+.gitignore
+*.log
+_tmp_*.py
+batch_live_run*.json
+streamlit_*.log
