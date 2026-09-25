@@ -36,14 +36,17 @@ function Run-OrPrint {
     }
 
     Write-Host "[RUN] $Description" -ForegroundColor Cyan
+    $global:LASTEXITCODE = 0
     & $Action
+    if ($LASTEXITCODE -ne 0) {
+        throw "$Description failed with exit code $LASTEXITCODE"
+    }
 }
 
 Write-Host "Repository: $RepoRoot"
 Write-Host "Target Web App: $WebAppName"
 Write-Host "Target ACR Image: $ImageRef"
 
-# Ensure git can operate in Codex/automation contexts.
 Run-OrPrint -Description "Mark repository as git safe.directory" -Action {
     git config --global --add safe.directory $RepoRoot | Out-Null
 }
@@ -91,7 +94,13 @@ if (-not $DryRun) {
 
 if (-not $SkipTests) {
     Run-OrPrint -Description "Run targeted regression tests" -Action {
-        & python -m pytest tests/test_executive_metrics.py -q
+        Push-Location $RepoRoot
+        try {
+            & python -m pytest tests/test_executive_metrics.py -q
+        }
+        finally {
+            Pop-Location
+        }
     }
 }
 
@@ -105,7 +114,7 @@ Run-OrPrint -Description "Push commit to origin/main" -Action {
 
 $runId = ""
 Run-OrPrint -Description "Trigger ACR build (no streamed logs to avoid encoding issues)" -Action {
-    $script:runId = az acr build --registry $AcrName --image "${ImageRepository}:$Tag" --no-logs $RepoRoot --query id -o tsv
+    $script:runId = az acr build --registry $AcrName --image "${ImageRepository}:$Tag" --no-logs $RepoRoot --query runId -o tsv
     if ([string]::IsNullOrWhiteSpace($script:runId)) {
         throw "Failed to capture ACR run ID."
     }
@@ -114,16 +123,22 @@ Run-OrPrint -Description "Trigger ACR build (no streamed logs to avoid encoding 
 
 if (-not $DryRun) {
     Write-Host "Waiting for ACR build completion..."
+    $buildCompleted = $false
     for ($i = 0; $i -lt 60; $i++) {
         $status = az acr task show-run --registry $AcrName --run-id $runId --query status -o tsv
         Write-Host "ACR status: $status"
         if ($status -eq "Succeeded") {
+            $buildCompleted = $true
             break
         }
         if ($status -in @("Failed", "Canceled", "Error")) {
             throw "ACR build failed with status: $status"
         }
         Start-Sleep -Seconds 10
+    }
+
+    if (-not $buildCompleted) {
+        throw "Timed out waiting for ACR build to complete."
     }
 }
 
@@ -161,4 +176,3 @@ Write-Host ""
 Write-Host "Release complete." -ForegroundColor Green
 Write-Host "Image: $ImageRef"
 Write-Host "App: https://$WebAppName.azurewebsites.net"
-
