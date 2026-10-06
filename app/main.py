@@ -35,8 +35,8 @@ from ai_data_quality_poc.services.llm_adapter import (
 
 NAV_OPTIONS = [
     "Executive summary",
-    "Assessment Approach",
-    "AI Assessment",
+    "Assessment approach",
+    "AI assessment",
     "Exceptions",
     "Chat",
 ]
@@ -50,10 +50,7 @@ def _apply_moorhouse_theme() -> None:
     st.markdown(
         """
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
         :root {
-            --mh-font-sans: "Poppins", "Segoe UI", Arial, sans-serif;
             --mh-brand: #3c1053;
             --mh-brand-accent: #00ab8e;
             --mh-brand-purple: #5c068c;
@@ -66,16 +63,6 @@ def _apply_moorhouse_theme() -> None:
             --mh-surface-muted: #f8fafc;
             --mh-border: #e5e7eb;
             --mh-danger: #b91c1c;
-        }
-
-        html, body,
-        [data-testid="stAppViewContainer"],
-        [data-testid="stAppViewContainer"] *,
-        [data-testid="stSidebar"] *,
-        [data-testid="stMetric"],
-        [data-testid="stDataFrameResizable"],
-        [data-testid="stDataFrameResizable"] * {
-            font-family: var(--mh-font-sans) !important;
         }
 
         .material-icons,
@@ -193,66 +180,6 @@ def _apply_moorhouse_theme() -> None:
             outline-offset: 2px !important;
         }
 
-        .mh-card {
-            background: var(--mh-surface);
-            border: 1px solid var(--mh-border);
-            border-radius: 12px;
-            padding: 12px 14px;
-            min-height: 90px;
-        }
-
-        .mh-card__label {
-            font-size: 0.78rem;
-            color: var(--mh-text-muted);
-            margin-bottom: 4px;
-            letter-spacing: 0.01em;
-        }
-
-        .mh-card__value {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--mh-text);
-            line-height: 1.2;
-        }
-
-        .mh-card__meta {
-            margin-top: 6px;
-            color: var(--mh-text-muted);
-            font-size: 0.78rem;
-        }
-
-        .mh-pill {
-            display: inline-block;
-            padding: 2px 10px;
-            border-radius: 999px;
-            border: 1px solid var(--mh-border);
-            font-size: 0.74rem;
-            font-weight: 600;
-            letter-spacing: 0.01em;
-            margin-right: 6px;
-            margin-top: 4px;
-            color: var(--mh-text);
-            background: #ffffff;
-        }
-
-        .mh-pill--ok {
-            border-color: rgba(0, 171, 142, 0.45);
-            background: rgba(0, 171, 142, 0.08);
-            color: #0f766e;
-        }
-
-        .mh-pill--warn {
-            border-color: rgba(228, 137, 73, 0.45);
-            background: rgba(228, 137, 73, 0.08);
-            color: #9a3412;
-        }
-
-        .mh-pill--risk {
-            border-color: rgba(185, 28, 28, 0.45);
-            background: rgba(185, 28, 28, 0.08);
-            color: #991b1b;
-        }
-
         .mh-callout {
             background: var(--mh-surface);
             border: 1px solid var(--mh-border);
@@ -341,23 +268,24 @@ def _format_request_option(service_request: ServiceRequestSummary) -> str:
 
 
 def _render_card(label: str, value: str, meta: str | None = None) -> None:
-    meta_html = "" if meta is None else f"<div class='mh-card__meta'>{escape(meta)}</div>"
-    st.markdown(
-        (
-            "<div class='mh-card'>"
-            f"<div class='mh-card__label'>{escape(label)}</div>"
-            f"<div class='mh-card__value'>{escape(value)}</div>"
-            f"{meta_html}</div>"
-        ),
-        unsafe_allow_html=True,
+    st.metric(
+        label,
+        value,
+        delta=meta,
+        delta_color="off",
+        delta_arrow="off",
+        border=True,
     )
 
 
 def _render_pill(label: str, tone: Literal["ok", "warn", "risk"] = "ok") -> None:
-    st.markdown(
-        f"<span class='mh-pill mh-pill--{tone}'>{escape(label)}</span>",
-        unsafe_allow_html=True,
-    )
+    colors = {"ok": "green", "warn": "orange", "risk": "red"}
+    icons = {
+        "ok": ":material/check_circle:",
+        "warn": ":material/warning:",
+        "risk": ":material/error:",
+    }
+    st.badge(label, color=colors[tone], icon=icons[tone])
 
 
 def _navigate_to(page: str) -> None:
@@ -381,14 +309,10 @@ def _render_result(result: AssessmentRunResult, recorded_status: str) -> None:
     contract = result.contract
     usage = result.usage
 
-    card_col_1, card_col_2, card_col_3, card_col_4 = st.columns(4)
-    with card_col_1:
+    with st.container(horizontal=True, gap="small"):
         _render_card("Recorded status", status_label(recorded_status))
-    with card_col_2:
         _render_card("AI recommendation", status_label(contract.recommended_status))
-    with card_col_3:
         _render_card("Confidence", confidence_label(contract.confidence))
-    with card_col_4:
         _render_card(
             "Token usage",
             f"{usage.input_tokens + usage.output_tokens}",
@@ -444,20 +368,14 @@ def _render_latest_saved_summary(service_request_id: str, current_recorded_statu
     )
 
     ai_matches_system_status = (
-        latest_saved.recommended_status.strip().lower()
-        == current_recorded_status.strip().lower()
+        latest_saved.recommended_status.strip().lower() == current_recorded_status.strip().lower()
     )
 
-    card_col_1, card_col_2, card_col_3, card_col_4, card_col_5 = st.columns(5)
-    with card_col_1:
+    with st.container(horizontal=True, gap="small"):
         _render_card("Saved status", latest_saved.assessment_status.title())
-    with card_col_2:
         _render_card("Saved recommendation", status_label(latest_saved.recommended_status))
-    with card_col_3:
         _render_card("Saved confidence", confidence_label(latest_saved.confidence))
-    with card_col_4:
         _render_card("Saved cost", _format_currency(latest_saved.total_cost))
-    with card_col_5:
         _render_card(
             "AI matches system status",
             "Yes" if ai_matches_system_status else "No",
@@ -505,16 +423,11 @@ def _render_assessment_output_history(service_request_id: str) -> None:
     total_cost = sum((record.total_cost for record in records), Decimal("0"))
     avg_duration_ms = int(sum(record.duration_ms for record in records) / total_runs)
 
-    metric_col_1, metric_col_2, metric_col_3, metric_col_4, metric_col_5 = st.columns(5)
-    with metric_col_1:
+    with st.container(horizontal=True, gap="small"):
         _render_card("Runs", str(total_runs))
-    with metric_col_2:
         _render_card("Successful", str(success_runs))
-    with metric_col_3:
         _render_card("Failed", str(failed_runs))
-    with metric_col_4:
         _render_card("Total tokens", f"{total_tokens}")
-    with metric_col_5:
         _render_card("Total cost", _format_currency(total_cost))
 
     st.caption(f"Average run time: {avg_duration_ms} ms")
@@ -592,7 +505,7 @@ def _parse_confidence_filter(value: str) -> ConfidenceFilter:
 
 
 def _render_shared_sidebar_filters() -> tuple[AssessmentStatusFilter, ConfidenceFilter]:
-    st.sidebar.markdown("### Global Filters")
+    st.sidebar.markdown("### Global filters")
     status_option = st.sidebar.selectbox(
         "Assessment status",
         options=["All", "success", "failed"],
@@ -612,7 +525,7 @@ def _render_filter_scope_hint(
 ) -> None:
     status_text = assessment_status_filter or "all"
     confidence_text = confidence_filter or "all"
-    st.caption(f"Global filter scope -> status: {status_text} | confidence: {confidence_text}")
+    st.caption(f"Global filter scope · status: {status_text} · confidence: {confidence_text}")
 
 
 def _render_executive_page(
@@ -628,12 +541,9 @@ def _render_executive_page(
         confidence_filter=confidence_filter,
     )
 
-    kpi_col_1, kpi_col_2, kpi_col_3, kpi_col_4, kpi_col_5 = st.columns(5)
-    with kpi_col_1:
+    with st.container(horizontal=True, gap="small"):
         _render_card("Cases assessed", str(metrics.total_cases_assessed))
-    with kpi_col_2:
         _render_card("Notes assessed", str(metrics.total_notes_assessed))
-    with kpi_col_3:
         _render_card(
             "Status alignment",
             f"{metrics.status_alignment_percent_success}%",
@@ -642,17 +552,13 @@ def _render_executive_page(
                 f"{metrics.status_alignment_total_success} successful runs"
             ),
         )
-    with kpi_col_4:
         _render_card("Total cost", _format_currency(metrics.total_cost))
-    with kpi_col_5:
-        _render_card("Top exception", metrics.top_exception_type or "None")
-
-    detail_col_1, detail_col_2, detail_col_3 = st.columns(3)
-    with detail_col_1:
+        _render_card(
+            "Top exception",
+            (metrics.top_exception_type or "None").replace("_", " ").capitalize(),
+        )
         _render_card("Assessment runs", str(metrics.total_assessments))
-    with detail_col_2:
         _render_card("Cases with exceptions", str(metrics.cases_with_exceptions))
-    with detail_col_3:
         _render_card(
             "Token usage",
             f"{metrics.total_input_tokens + metrics.total_output_tokens}",
@@ -702,11 +608,11 @@ def _render_executive_page(
         _render_pill("Stable", tone="ok")
 
     st.write("Quick actions")
-    action_col_1, action_col_2 = st.columns(2)
-    if action_col_1.button("View exceptions"):
-        _navigate_to("Exceptions")
-    if action_col_2.button("Open assessment workflow"):
-        _navigate_to("AI Assessment")
+    with st.container(horizontal=True, gap="small"):
+        if st.button("View exceptions", icon=":material/warning:"):
+            _navigate_to("Exceptions")
+        if st.button("Open assessment workflow", icon=":material/fact_check:"):
+            _navigate_to("AI assessment")
 
     recent_exception_records = list_exception_records(
         assessment_status_filter=assessment_status_filter,
@@ -730,8 +636,9 @@ def _render_executive_page(
             width="stretch",
         )
 
+
 def _render_assessment_approach_page() -> None:
-    st.subheader("Assessment Approach")
+    st.subheader("Assessment approach")
     st.caption("How the AI recommendation is produced, validated and governed.")
 
     st.markdown(
@@ -748,7 +655,7 @@ def _render_assessment_approach_page() -> None:
         st.image(
             str(METHODOLOGY_DIAGRAM_PATH),
             caption="AI Data Quality PoC methodology overview",
-            use_container_width=True,
+            width="stretch",
             output_format="PNG",
         )
     else:
@@ -803,7 +710,6 @@ def _render_assessment_approach_page() -> None:
     )
 
 
-
 def _render_assessment_page(
     service_requests: list[ServiceRequestSummary],
     assessment_status_filter: AssessmentStatusFilter,
@@ -827,12 +733,9 @@ def _render_assessment_page(
         confidence_filter=confidence_filter,
     )
 
-    metric_col_1, metric_col_2, metric_col_3, metric_col_4, metric_col_5, metric_col_6 = st.columns(6)
-    with metric_col_1:
+    with st.container(horizontal=True, gap="small"):
         _render_card("Assessment runs", str(metrics.total_assessments))
-    with metric_col_2:
         _render_card("Cases assessed", str(metrics.total_cases_assessed))
-    with metric_col_3:
         _render_card(
             "Status alignment",
             f"{metrics.status_alignment_percent_success}%",
@@ -841,11 +744,8 @@ def _render_assessment_page(
                 f"{metrics.status_alignment_total_success} successful runs"
             ),
         )
-    with metric_col_4:
         _render_card("Total tokens", str(metrics.total_input_tokens + metrics.total_output_tokens))
-    with metric_col_5:
         _render_card("Total cost", _format_currency(metrics.total_cost))
-    with metric_col_6:
         _render_card("Cases with exceptions", str(metrics.cases_with_exceptions))
 
     st.markdown("### 2) Full SR output table")
@@ -907,9 +807,9 @@ def _render_assessment_page(
 
     selectable_case_ids = [row["service_request_id"] for row in table_rows]
 
-    st.markdown("### 3) SR deep dive")
+    st.markdown("### 3) Service request deep dive")
     selected_service_request_id = st.selectbox(
-        "Select SR to inspect",
+        "Select service request to inspect",
         options=selectable_case_ids,
         key="assessment_deep_dive_sr",
     )
@@ -923,7 +823,7 @@ def _render_assessment_page(
 
     assessment_engine_mode = st.selectbox(
         "Assessment mode",
-        options=["Mock (Demo/QA)", live_mode_label],
+        options=["Mock (demo/QA)", live_mode_label],
         help=(
             "Use Mock mode for deterministic demos and QA. "
             "Live mode uses provider configuration from environment variables."
@@ -966,14 +866,10 @@ def _render_assessment_page(
 
     st.session_state["selected_service_request_id"] = selected_request.id
 
-    summary_col_1, summary_col_2, summary_col_3, summary_col_4 = st.columns(4)
-    with summary_col_1:
+    with st.container(horizontal=True, gap="small"):
         _render_card("Recorded status", status_label(case_context.service_request.recorded_status))
-    with summary_col_2:
         _render_card("Notes", str(len(case_context.interaction_notes)))
-    with summary_col_3:
         _render_card("Quotes", str(len(case_context.quotes)))
-    with summary_col_4:
         _render_card("Payments", str(len(case_context.payments)))
 
     _render_latest_saved_summary(
@@ -1090,13 +986,13 @@ def _render_chat_page(
         limit=50,
     )
 
-    summary_col_1, summary_col_2, summary_col_3 = st.columns(3)
-    with summary_col_1:
+    with st.container(horizontal=True, gap="small"):
         _render_card("Assessments in scope", str(metrics.total_assessments))
-    with summary_col_2:
         _render_card("Exceptions in scope", str(metrics.total_exceptions))
-    with summary_col_3:
-        _render_card("Top exception", metrics.top_exception_type or "None")
+        _render_card(
+            "Top exception",
+            (metrics.top_exception_type or "None").replace("_", " ").capitalize(),
+        )
 
     if metrics.total_assessments == 0:
         st.info(
@@ -1165,7 +1061,6 @@ def _render_chat_page(
         )
 
 
-
 def _render_exceptions_page(
     assessment_status_filter: AssessmentStatusFilter,
     confidence_filter: ConfidenceFilter,
@@ -1185,10 +1080,8 @@ def _render_exceptions_page(
         return
 
     unique_exception_types = len(exception_counts)
-    count_col_1, count_col_2 = st.columns(2)
-    with count_col_1:
+    with st.container(horizontal=True, gap="small"):
         _render_card("Total exception records", str(exception_records_total))
-    with count_col_2:
         _render_card("Exception types", str(unique_exception_types))
 
     st.write("Exception counts by type")
@@ -1235,13 +1128,18 @@ def _render_exceptions_page(
     )
 
     case_options = sorted({record.service_request_id for record in records})
-    target_case_id = st.selectbox("Open case in AI Assessment page", options=case_options)
+    target_case_id = st.selectbox("Open case in AI assessment", options=case_options)
     if st.button("Open selected case"):
         st.session_state["selected_service_request_id"] = target_case_id
-        _navigate_to("AI Assessment")
+        _navigate_to("AI assessment")
+
 
 def main() -> None:
-    st.set_page_config(page_title="AI Data Quality PoC", layout="wide")
+    st.set_page_config(
+        page_title="AI Data Quality PoC",
+        page_icon=":material/fact_check:",
+        layout="wide",
+    )
     _apply_moorhouse_theme()
 
     st.title("AI Data Quality PoC")
@@ -1277,9 +1175,9 @@ def main() -> None:
 
     if nav_page == "Executive summary":
         _render_executive_page(assessment_status_filter, confidence_filter)
-    elif nav_page == "Assessment Approach":
+    elif nav_page == "Assessment approach":
         _render_assessment_approach_page()
-    elif nav_page == "AI Assessment":
+    elif nav_page == "AI assessment":
         _render_assessment_page(
             service_requests,
             assessment_status_filter,
@@ -1293,22 +1191,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

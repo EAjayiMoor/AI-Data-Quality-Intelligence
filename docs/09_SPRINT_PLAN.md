@@ -13,6 +13,7 @@
 - Update (2026-09-25): added status-alignment KPI (system status vs AI recommendation) to Executive summary and AI Assessment run-set metrics.
 - Update (2026-09-25): added one-command release script for commit/push + Azure ACR build + Web App deployment with health check.
 - Update (2026-09-26): added SR deep-dive "AI matches system status" flag in AI Assessment page latest saved summary.
+- Update (2026-10-06): completed a responsive Streamlit UI pass using native metric cards, wrapping horizontal containers, accessible status badges, current width APIs, sentence-case navigation and expanded Moorhouse theme tokens.
 - Out of scope: live provider API calls and non-assessment pages.
 
 ## Phase 8 exit checklist

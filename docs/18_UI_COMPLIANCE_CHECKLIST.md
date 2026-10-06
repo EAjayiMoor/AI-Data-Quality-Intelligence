@@ -88,7 +88,10 @@ Use this at phase-end UI checkpoints:
 - Tokens and brand colour mapping: **implemented in Streamlit CSS layer**.
 - Sentence-case copy and plain language: **implemented across executive, assessment, and exceptions pages**.
 - Emoji/exclamation policy: **pass**.
-- Status signalling with label + colour + text: **implemented via risk callouts and status pills**.
+- Status signalling with label + icon + colour: **implemented via risk callouts and native status badges**.
 - Focus visibility: **implemented via global `:focus-visible` styling**.
 - Reduced motion handling: **implemented via `prefers-reduced-motion` rule**.
+- Responsive alignment: **implemented using wrapping horizontal containers for KPI and action groups, avoiding five- and six-column compression at narrow widths**.
+- Native component alignment: **implemented for KPI metrics and status badges, including label + icon + colour risk signalling**.
+- Streamlit API currency: **deprecated `use_container_width` usage removed and covered by a UI convention test**.
 - Remaining gap: full component parity with React/Tailwind reference remains partial due Streamlit native-widget constraints.
