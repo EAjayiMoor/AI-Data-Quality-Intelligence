@@ -67,7 +67,7 @@ What it does end-to-end:
 - runs `pytest tests/test_executive_metrics.py -q` (unless `-SkipTests`);
 - commits and pushes to `origin/main`;
 - builds a tagged image in `crmhcdemo` ACR;
-- updates and restarts `ai-data-quality-intel` Azure Web App;
+- updates and restarts `ai-data-quality-intel-2609251438` Azure Web App;
 - waits for a `200` health check.
 
 Useful switches:
@@ -79,3 +79,4 @@ Useful switches:
 # Release without test execution
 .\scripts\release_to_azure.ps1 -CommitMessage "Hotfix" -SkipTests
 ```
+

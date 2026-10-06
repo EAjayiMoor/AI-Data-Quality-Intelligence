@@ -2,10 +2,10 @@ param(
     [Parameter(Mandatory = $true)]
     [string]$CommitMessage,
     [string]$ResourceGroup = "RG-DEMO-UKW",
-    [string]$WebAppName = "ai-data-quality-intel",
+    [string]$WebAppName = "ai-data-quality-intel-2609251438",
     [string]$AcrName = "crmhcdemo",
     [string]$ImageRepository = "ai-data-quality-intel",
-    [string]$HealthEndpoint = "https://ai-data-quality-intel.azurewebsites.net/health",
+    [string]$HealthEndpoint = "https://ai-data-quality-intel-2609251438.azurewebsites.net/health",
     [switch]$SkipTests,
     [switch]$DryRun,
     [string[]]$ExcludeFromAutoStage = @(
@@ -176,3 +176,4 @@ Write-Host ""
 Write-Host "Release complete." -ForegroundColor Green
 Write-Host "Image: $ImageRef"
 Write-Host "App: https://$WebAppName.azurewebsites.net"
+
