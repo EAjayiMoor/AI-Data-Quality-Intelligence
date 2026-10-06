@@ -1,17 +1,17 @@
 [
   {
     "service_request_id": "SR-0059",
-    "assessment_id": "ASM-33A746A74F98",
-    "result_kind": "success",
-    "recommended_status": "completed",
-    "confidence": "medium",
+    "assessment_id": "ASM-B58C3DA8F934",
+    "result_kind": "failure",
+    "recommended_status": "insufficient_evidence",
+    "confidence": "low",
     "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
-    "error_code": "",
-    "message": ""
+    "error_code": "contract_validation_failed",
+    "message": "Low confidence assessments must include a low_confidence exception item."
   },
   {
     "service_request_id": "SR-0060",
-    "assessment_id": "ASM-F0BF8328CA25",
+    "assessment_id": "ASM-DB4E1B176C0D",
     "result_kind": "success",
     "recommended_status": "in_delivery",
     "confidence": "medium",
@@ -21,9 +21,9 @@
   },
   {
     "service_request_id": "SR-0058",
-    "assessment_id": "ASM-A77D66A54A91",
+    "assessment_id": "ASM-28D7B9125CBA",
     "result_kind": "success",
-    "recommended_status": "cancelled",
+    "recommended_status": "completed",
     "confidence": "medium",
     "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
     "error_code": "",
@@ -31,17 +31,17 @@
   },
   {
     "service_request_id": "SR-0057",
-    "assessment_id": "ASM-2472FC240E4C",
+    "assessment_id": "ASM-26AD0264DAF5",
     "result_kind": "failure",
     "recommended_status": "insufficient_evidence",
     "confidence": "low",
     "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
     "error_code": "contract_validation_failed",
-    "message": "1 validation error for AssessmentContract\nrecommended_status\n  Input should be 'new', 'quoted', 'accepted_unpaid', 'accepted_paid', 'in_delivery', 'completed', 'cancelled' or 'insufficient_evidence' [type=literal_error, input_value='pending_customer_confirmation', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error"
+    "message": "1 validation error for AssessmentContract\nrecommended_status\n  Input should be 'new', 'quoted', 'accepted_unpaid', 'accepted_paid', 'in_delivery', 'completed', 'cancelled' or 'insufficient_evidence' [type=literal_error, input_value='in_progress', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error"
   },
   {
     "service_request_id": "SR-0056",
-    "assessment_id": "ASM-DF72DE917CDC",
+    "assessment_id": "ASM-37734C6C1BDC",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "medium",
@@ -51,7 +51,7 @@
   },
   {
     "service_request_id": "SR-0055",
-    "assessment_id": "ASM-A19C6232B2A5",
+    "assessment_id": "ASM-74622C900A0E",
     "result_kind": "success",
     "recommended_status": "accepted_unpaid",
     "confidence": "medium",
@@ -61,7 +61,7 @@
   },
   {
     "service_request_id": "SR-0054",
-    "assessment_id": "ASM-8D38CF93AA5C",
+    "assessment_id": "ASM-CBCCBADFEC66",
     "result_kind": "success",
     "recommended_status": "accepted_unpaid",
     "confidence": "medium",
@@ -71,7 +71,7 @@
   },
   {
     "service_request_id": "SR-0052",
-    "assessment_id": "ASM-07D442AA5795",
+    "assessment_id": "ASM-A1524F2EC256",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "medium",
@@ -81,17 +81,17 @@
   },
   {
     "service_request_id": "SR-0053",
-    "assessment_id": "ASM-DA3F41150768",
+    "assessment_id": "ASM-CDFE1F5B09F9",
     "result_kind": "failure",
     "recommended_status": "insufficient_evidence",
     "confidence": "low",
     "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
     "error_code": "contract_validation_failed",
-    "message": "1 validation error for AssessmentContract\nrecommended_status\n  Input should be 'new', 'quoted', 'accepted_unpaid', 'accepted_paid', 'in_delivery', 'completed', 'cancelled' or 'insufficient_evidence' [type=literal_error, input_value='withdrawn', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error"
+    "message": "1 validation error for AssessmentContract\nrecommended_status\n  Input should be 'new', 'quoted', 'accepted_unpaid', 'accepted_paid', 'in_delivery', 'completed', 'cancelled' or 'insufficient_evidence' [type=literal_error, input_value='cancelled_withdrawn', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error"
   },
   {
     "service_request_id": "SR-0051",
-    "assessment_id": "ASM-E6353722E115",
+    "assessment_id": "ASM-D27786157CA4",
     "result_kind": "success",
     "recommended_status": "quoted",
     "confidence": "medium",
@@ -101,7 +101,7 @@
   },
   {
     "service_request_id": "SR-0050",
-    "assessment_id": "ASM-1B6A36B76379",
+    "assessment_id": "ASM-47792729B045",
     "result_kind": "success",
     "recommended_status": "in_delivery",
     "confidence": "medium",
@@ -111,7 +111,7 @@
   },
   {
     "service_request_id": "SR-0049",
-    "assessment_id": "ASM-32FA63C369E1",
+    "assessment_id": "ASM-F137A06E9384",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "medium",
@@ -121,7 +121,7 @@
   },
   {
     "service_request_id": "SR-0048",
-    "assessment_id": "ASM-7AB67A7DFF61",
+    "assessment_id": "ASM-5F97E1239C44",
     "result_kind": "success",
     "recommended_status": "cancelled",
     "confidence": "high",
@@ -131,7 +131,7 @@
   },
   {
     "service_request_id": "SR-0047",
-    "assessment_id": "ASM-77ED98905B69",
+    "assessment_id": "ASM-2ACEA90E4EDB",
     "result_kind": "success",
     "recommended_status": "quoted",
     "confidence": "high",
@@ -141,17 +141,17 @@
   },
   {
     "service_request_id": "SR-0046",
-    "assessment_id": "ASM-FB236E965A03",
+    "assessment_id": "ASM-1260B8017D7A",
     "result_kind": "success",
     "recommended_status": "cancelled",
-    "confidence": "high",
+    "confidence": "medium",
     "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
     "error_code": "",
     "message": ""
   },
   {
     "service_request_id": "SR-0045",
-    "assessment_id": "ASM-E7CB74EAE7F7",
+    "assessment_id": "ASM-AA6A8D88D78E",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "medium",
@@ -161,17 +161,17 @@
   },
   {
     "service_request_id": "SR-0043",
-    "assessment_id": "ASM-F7B514113121",
+    "assessment_id": "ASM-74B4F219CC44",
     "result_kind": "success",
     "recommended_status": "completed",
-    "confidence": "medium",
+    "confidence": "high",
     "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
     "error_code": "",
     "message": ""
   },
   {
     "service_request_id": "SR-0044",
-    "assessment_id": "ASM-42F994A709FB",
+    "assessment_id": "ASM-F3BB7E71B96F",
     "result_kind": "success",
     "recommended_status": "quoted",
     "confidence": "medium",
@@ -181,7 +181,7 @@
   },
   {
     "service_request_id": "SR-0042",
-    "assessment_id": "ASM-6F08FEDD0715",
+    "assessment_id": "ASM-C7EAF7282821",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "medium",
@@ -191,7 +191,7 @@
   },
   {
     "service_request_id": "SR-0041",
-    "assessment_id": "ASM-9134F168984A",
+    "assessment_id": "ASM-0064CCDFB270",
     "result_kind": "success",
     "recommended_status": "accepted_unpaid",
     "confidence": "medium",
@@ -201,7 +201,7 @@
   },
   {
     "service_request_id": "SR-0039",
-    "assessment_id": "ASM-42208D9194AA",
+    "assessment_id": "ASM-23EAE1D0F189",
     "result_kind": "success",
     "recommended_status": "cancelled",
     "confidence": "high",
@@ -211,7 +211,7 @@
   },
   {
     "service_request_id": "SR-0040",
-    "assessment_id": "ASM-BFFA269280A1",
+    "assessment_id": "ASM-68AB429D37E8",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "medium",
@@ -221,17 +221,17 @@
   },
   {
     "service_request_id": "SR-0038",
-    "assessment_id": "ASM-16708BBB1134",
-    "result_kind": "success",
-    "recommended_status": "in_delivery",
-    "confidence": "medium",
+    "assessment_id": "ASM-1CC8C8D8E290",
+    "result_kind": "failure",
+    "recommended_status": "insufficient_evidence",
+    "confidence": "low",
     "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
-    "error_code": "",
-    "message": ""
+    "error_code": "contract_validation_failed",
+    "message": "Status mismatch requires a status_mismatch exception item."
   },
   {
     "service_request_id": "SR-0037",
-    "assessment_id": "ASM-BD151E480522",
+    "assessment_id": "ASM-EAFB557211F0",
     "result_kind": "success",
     "recommended_status": "cancelled",
     "confidence": "high",
@@ -241,17 +241,17 @@
   },
   {
     "service_request_id": "SR-0035",
-    "assessment_id": "ASM-65DFDE4E049B",
+    "assessment_id": "ASM-955EB3314F6B",
     "result_kind": "success",
     "recommended_status": "insufficient_evidence",
-    "confidence": "medium",
+    "confidence": "high",
     "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
     "error_code": "",
     "message": ""
   },
   {
     "service_request_id": "SR-0036",
-    "assessment_id": "ASM-A60A38F4BEFF",
+    "assessment_id": "ASM-1FF6766ABC6D",
     "result_kind": "success",
     "recommended_status": "accepted_unpaid",
     "confidence": "medium",
@@ -261,7 +261,7 @@
   },
   {
     "service_request_id": "SR-0034",
-    "assessment_id": "ASM-E02BD261A9A2",
+    "assessment_id": "ASM-C3349C199F6E",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "medium",
@@ -271,7 +271,7 @@
   },
   {
     "service_request_id": "SR-0033",
-    "assessment_id": "ASM-7D8020284678",
+    "assessment_id": "ASM-1BFB4CAB8496",
     "result_kind": "success",
     "recommended_status": "in_delivery",
     "confidence": "medium",
@@ -281,7 +281,7 @@
   },
   {
     "service_request_id": "SR-0032",
-    "assessment_id": "ASM-EA4189ED3C5D",
+    "assessment_id": "ASM-D5971D18D8CC",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "medium",
@@ -291,7 +291,7 @@
   },
   {
     "service_request_id": "SR-0031",
-    "assessment_id": "ASM-6E42FD71877B",
+    "assessment_id": "ASM-75B871DC8C83",
     "result_kind": "success",
     "recommended_status": "accepted_paid",
     "confidence": "medium",
@@ -301,7 +301,7 @@
   },
   {
     "service_request_id": "SR-0030",
-    "assessment_id": "ASM-3B0FF6F898CC",
+    "assessment_id": "ASM-AA105701A844",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "medium",
@@ -311,17 +311,17 @@
   },
   {
     "service_request_id": "SR-0029",
-    "assessment_id": "ASM-45C59C78A60B",
+    "assessment_id": "ASM-39B520E1B961",
     "result_kind": "success",
     "recommended_status": "completed",
-    "confidence": "medium",
+    "confidence": "high",
     "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
     "error_code": "",
     "message": ""
   },
   {
     "service_request_id": "SR-0028",
-    "assessment_id": "ASM-3511894FCE61",
+    "assessment_id": "ASM-67BA6352A1A8",
     "result_kind": "success",
     "recommended_status": "in_delivery",
     "confidence": "medium",
@@ -331,7 +331,7 @@
   },
   {
     "service_request_id": "SR-0027",
-    "assessment_id": "ASM-FCA0E958A0D6",
+    "assessment_id": "ASM-47C7B33008D5",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "medium",
@@ -341,7 +341,7 @@
   },
   {
     "service_request_id": "SR-0025",
-    "assessment_id": "ASM-E5CC4A23CFBB",
+    "assessment_id": "ASM-529FD04B4FB3",
     "result_kind": "success",
     "recommended_status": "in_delivery",
     "confidence": "medium",
@@ -351,7 +351,7 @@
   },
   {
     "service_request_id": "SR-0026",
-    "assessment_id": "ASM-55811C23F12F",
+    "assessment_id": "ASM-4D1E48B392D5",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "medium",
@@ -361,7 +361,7 @@
   },
   {
     "service_request_id": "SR-0024",
-    "assessment_id": "ASM-4E97817C59A0",
+    "assessment_id": "ASM-EC524207C9D0",
     "result_kind": "success",
     "recommended_status": "accepted_paid",
     "confidence": "medium",
@@ -371,7 +371,7 @@
   },
   {
     "service_request_id": "SR-0023",
-    "assessment_id": "ASM-86D920AD941C",
+    "assessment_id": "ASM-4FEF9F45F764",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "high",
@@ -381,9 +381,9 @@
   },
   {
     "service_request_id": "SR-0022",
-    "assessment_id": "ASM-518C52E89764",
+    "assessment_id": "ASM-EC0A3EC6EF6C",
     "result_kind": "success",
-    "recommended_status": "accepted_unpaid",
+    "recommended_status": "cancelled",
     "confidence": "medium",
     "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
     "error_code": "",
@@ -391,7 +391,7 @@
   },
   {
     "service_request_id": "SR-0021",
-    "assessment_id": "ASM-27992C1D9CEF",
+    "assessment_id": "ASM-35F30D67953C",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "high",
@@ -401,7 +401,7 @@
   },
   {
     "service_request_id": "SR-0020",
-    "assessment_id": "ASM-B88013286237",
+    "assessment_id": "ASM-D40CA55B2172",
     "result_kind": "success",
     "recommended_status": "quoted",
     "confidence": "medium",
@@ -411,7 +411,7 @@
   },
   {
     "service_request_id": "SR-0018",
-    "assessment_id": "ASM-22CCFD8371D7",
+    "assessment_id": "ASM-9C60344F3FB0",
     "result_kind": "success",
     "recommended_status": "accepted_paid",
     "confidence": "medium",
@@ -421,27 +421,27 @@
   },
   {
     "service_request_id": "SR-0019",
-    "assessment_id": "ASM-249B46A978A3",
-    "result_kind": "failure",
-    "recommended_status": "insufficient_evidence",
-    "confidence": "low",
+    "assessment_id": "ASM-041DE349C20D",
+    "result_kind": "success",
+    "recommended_status": "cancelled",
+    "confidence": "medium",
     "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
-    "error_code": "contract_validation_failed",
-    "message": "1 validation error for AssessmentContract\nrecommended_status\n  Input should be 'new', 'quoted', 'accepted_unpaid', 'accepted_paid', 'in_delivery', 'completed', 'cancelled' or 'insufficient_evidence' [type=literal_error, input_value='pending_customer_confirmation', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error"
+    "error_code": "",
+    "message": ""
   },
   {
     "service_request_id": "SR-0017",
-    "assessment_id": "ASM-E6447AE4B0C4",
-    "result_kind": "failure",
-    "recommended_status": "insufficient_evidence",
-    "confidence": "low",
+    "assessment_id": "ASM-3423E6FE5EC7",
+    "result_kind": "success",
+    "recommended_status": "completed",
+    "confidence": "medium",
     "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
-    "error_code": "contract_validation_failed",
-    "message": "1 validation error for AssessmentContract\nrecommended_status\n  Input should be 'new', 'quoted', 'accepted_unpaid', 'accepted_paid', 'in_delivery', 'completed', 'cancelled' or 'insufficient_evidence' [type=literal_error, input_value='completed_pending_closure', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error"
+    "error_code": "",
+    "message": ""
   },
   {
     "service_request_id": "SR-0015",
-    "assessment_id": "ASM-EEE320A73C82",
+    "assessment_id": "ASM-0FA5CB9AC253",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "high",
@@ -451,17 +451,17 @@
   },
   {
     "service_request_id": "SR-0016",
-    "assessment_id": "ASM-1BE0315A49A1",
+    "assessment_id": "ASM-DFB540329F00",
     "result_kind": "success",
-    "recommended_status": "insufficient_evidence",
-    "confidence": "high",
+    "recommended_status": "cancelled",
+    "confidence": "medium",
     "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
     "error_code": "",
     "message": ""
   },
   {
     "service_request_id": "SR-0014",
-    "assessment_id": "ASM-54D5858197E0",
+    "assessment_id": "ASM-F2DE7BBE9C6D",
     "result_kind": "success",
     "recommended_status": "in_delivery",
     "confidence": "medium",
@@ -471,7 +471,7 @@
   },
   {
     "service_request_id": "SR-0013",
-    "assessment_id": "ASM-39D186EF8A68",
+    "assessment_id": "ASM-2C8D710A1B41",
     "result_kind": "success",
     "recommended_status": "cancelled",
     "confidence": "high",
@@ -481,7 +481,7 @@
   },
   {
     "service_request_id": "SR-0012",
-    "assessment_id": "ASM-6D2F78A2F25F",
+    "assessment_id": "ASM-508E85F05ABD",
     "result_kind": "success",
     "recommended_status": "cancelled",
     "confidence": "high",
@@ -491,27 +491,27 @@
   },
   {
     "service_request_id": "SR-0011",
-    "assessment_id": "ASM-79E3B18B537C",
+    "assessment_id": "ASM-C7A9FA82877F",
+    "result_kind": "failure",
+    "recommended_status": "insufficient_evidence",
+    "confidence": "low",
+    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
+    "error_code": "contract_validation_failed",
+    "message": "Low confidence assessments must include a low_confidence exception item."
+  },
+  {
+    "service_request_id": "SR-0009",
+    "assessment_id": "ASM-B305C4EC7D5D",
     "result_kind": "success",
-    "recommended_status": "accepted_unpaid",
+    "recommended_status": "cancelled",
     "confidence": "medium",
     "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
     "error_code": "",
     "message": ""
   },
   {
-    "service_request_id": "SR-0009",
-    "assessment_id": "ASM-3B7ACEE428D2",
-    "result_kind": "success",
-    "recommended_status": "cancelled",
-    "confidence": "high",
-    "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
-    "error_code": "",
-    "message": ""
-  },
-  {
     "service_request_id": "SR-0010",
-    "assessment_id": "ASM-9A83545F91A3",
+    "assessment_id": "ASM-E6A46A4F6AA2",
     "result_kind": "success",
     "recommended_status": "accepted_paid",
     "confidence": "medium",
@@ -521,7 +521,7 @@
   },
   {
     "service_request_id": "SR-0008",
-    "assessment_id": "ASM-2D33DA51BFC2",
+    "assessment_id": "ASM-E16C6F813228",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "medium",
@@ -531,7 +531,7 @@
   },
   {
     "service_request_id": "SR-0007",
-    "assessment_id": "ASM-3490A428202A",
+    "assessment_id": "ASM-9385619D1165",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "medium",
@@ -541,7 +541,7 @@
   },
   {
     "service_request_id": "SR-0006",
-    "assessment_id": "ASM-786715E6F2C1",
+    "assessment_id": "ASM-639D0D0B9C12",
     "result_kind": "success",
     "recommended_status": "accepted_paid",
     "confidence": "medium",
@@ -551,17 +551,17 @@
   },
   {
     "service_request_id": "SR-0004",
-    "assessment_id": "ASM-D0F91836B6A9",
+    "assessment_id": "ASM-BACC0C527292",
     "result_kind": "failure",
     "recommended_status": "insufficient_evidence",
     "confidence": "low",
     "model_name": "gpt-5.3-codex-Emmanuel-Ajayi",
     "error_code": "contract_validation_failed",
-    "message": "1 validation error for AssessmentContract\nrecommended_status\n  Input should be 'new', 'quoted', 'accepted_unpaid', 'accepted_paid', 'in_delivery', 'completed', 'cancelled' or 'insufficient_evidence' [type=literal_error, input_value='cancellation_requested', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error"
+    "message": "Low confidence assessments must include a low_confidence exception item."
   },
   {
     "service_request_id": "SR-0005",
-    "assessment_id": "ASM-066067477B67",
+    "assessment_id": "ASM-2D7AC1929FD7",
     "result_kind": "success",
     "recommended_status": "accepted_paid",
     "confidence": "medium",
@@ -571,7 +571,7 @@
   },
   {
     "service_request_id": "SR-0003",
-    "assessment_id": "ASM-F8F7585F2F92",
+    "assessment_id": "ASM-E56185D52EA1",
     "result_kind": "success",
     "recommended_status": "completed",
     "confidence": "medium",
@@ -581,7 +581,7 @@
   },
   {
     "service_request_id": "SR-0001",
-    "assessment_id": "ASM-293F21D8CBB3",
+    "assessment_id": "ASM-CE13783D2EF3",
     "result_kind": "success",
     "recommended_status": "in_delivery",
     "confidence": "medium",
@@ -591,7 +591,7 @@
   },
   {
     "service_request_id": "SR-0002",
-    "assessment_id": "ASM-6032D82CB23A",
+    "assessment_id": "ASM-E74A6135F364",
     "result_kind": "success",
     "recommended_status": "accepted_paid",
     "confidence": "medium",
